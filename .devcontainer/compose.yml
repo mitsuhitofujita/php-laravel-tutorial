@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  dev:
+    build: ./docker/dev
+    command: /bin/sh -c "while sleep 1000; do :; done"
+    volumes:
+      - ../:/workspace:cached
+  mariadb:
+    build: ./docker/mariadb
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: tutorial
+      MARIADB_DATABASE: tutorial
+      MARIADB_USER: tutorial
+      MARIADB_PASSWORD: tutorial
+      MARIADB_HOST: mariadb
