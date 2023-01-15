@@ -4,5 +4,6 @@
 		"compose.yml"
 	],
 	"service": "php-fpm",
+	"remoteUser": "vscode",
 	"workspaceFolder": "/workspace"
 }
