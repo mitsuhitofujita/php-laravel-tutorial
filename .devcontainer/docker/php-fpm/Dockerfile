@@ -7,6 +7,8 @@ RUN apt-get update -y && \
         libmariadb-dev \
         libxml2-dev \
         libzip-dev
+RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
+    apt-get install -y nodejs
 RUN apt-get autoremove -y && \
     apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
