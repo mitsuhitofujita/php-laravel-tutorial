@@ -8,5 +8,7 @@ php artisan serve --host=0.0.0.0 --port=8000
 ```
 
 ```
+config('database.default');
+config('database.connections.mysql');
 DB::select('select 1');
 ```
