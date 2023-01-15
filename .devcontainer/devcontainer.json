@@ -1,14 +1,8 @@
 {
 	"name": "PHP",
-	// "image": "mcr.microsoft.com/devcontainers/base:bullseye",
 	"dockerComposeFile": [
 		"compose.yml"
 	],
-	"service": "dev",
-	"workspaceFolder": "/workspace",
-	"features": {
-		"ghcr.io/devcontainers/features/php:1": {
-			"version": "8.2.1"
-		}
-	}
+	"service": "php-fpm",
+	"workspaceFolder": "/workspace"
 }
