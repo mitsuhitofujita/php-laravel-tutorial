@@ -12,3 +12,9 @@ config('database.default');
 config('database.connections.mysql');
 DB::select('select 1');
 ```
+
+```
+composer require laravel/breeze --dev
+php artisan breeze:install vue
+php artisan serve
+```
