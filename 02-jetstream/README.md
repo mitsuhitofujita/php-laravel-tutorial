@@ -8,4 +8,5 @@ php artisan jetstream:install inertia
 npm install
 npm run build
 php artisan migrate
+php artisan serve
 ```
