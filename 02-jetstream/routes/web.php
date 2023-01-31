@@ -33,6 +33,6 @@ Route::middleware([
         return Inertia::render('Dashboard');
     })->name('dashboard');
     Route::get('/hello', function () {
-        return Inertia::render('Hello');
+        return Inertia::render('Hello', ['world' => 'World']);
     })->name('hello');
 });
