@@ -3,6 +3,7 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\Post\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,4 +36,7 @@ Route::middleware([
     Route::get('/hello', function () {
         return Inertia::render('Hello', ['world' => 'World']);
     })->name('hello');
+    Route::get('/posts', [PostController::class, 'index'])->name('post.index');
+    Route::get('/posts/create', [PostController::class, 'create'])->name('post.create');
+    Route::put('/posts/store', [PostController::class, 'store'])->name('post.store');
 });
