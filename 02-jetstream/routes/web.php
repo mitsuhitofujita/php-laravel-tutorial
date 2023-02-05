@@ -38,5 +38,8 @@ Route::middleware([
     })->name('hello');
     Route::get('/posts', [PostController::class, 'index'])->name('post.index');
     Route::get('/posts/create', [PostController::class, 'create'])->name('post.create');
-    Route::put('/posts/store', [PostController::class, 'store'])->name('post.store');
+    Route::put('/posts', [PostController::class, 'store'])->name('post.store');
+    Route::get('/posts/edit', [PostController::class, 'edit'])->name('post.edit');
+    Route::put('/posts/:id', [PostController::class, 'update'])->name('post.update');
+    Route::delete('/posts/:id', [PostController::class, 'destroy'])->name('post.destroy');
 });
