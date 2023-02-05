@@ -11,6 +11,10 @@ php artisan migrate
 php artisan serve
 ```
 
+```
+php artisan make:migration create_posts_table
+php artisan make:model Post
+```
 
 ```
 $params = ['payload' => 'new-post'];

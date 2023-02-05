@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Inertia\Inertia;
 use App\Http\Requests\Post\PostCreateRequest;
 use App\Http\Controllers\Controller;
-
+use App\Models\Post;
 
 class PostController extends Controller
 {
@@ -36,10 +36,16 @@ class PostController extends Controller
      * @param  \Illuminate\Http\CreateRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(PostCreateRequest $request)
+    public function store(PostCreateRequest $request, Post $post)
     {
         //
+        logger()->debug($request->getUserId());
         logger()->debug($request->getPayload());
+
+        $post->fill([
+            'user_id' => $request->getUserId(),
+            'payload' => $request->getPayload(),
+        ])->save();
     }
 
     /**

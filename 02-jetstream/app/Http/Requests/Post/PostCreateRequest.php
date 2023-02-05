@@ -33,4 +33,9 @@ class PostCreateRequest extends FormRequest
     {
         return $this->input('payload');
     }
+
+    public function getUserId(): int
+    {
+        return $this->user()->id;
+    }
 }
