@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Post;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use App\Http\Requests\Post\PostCreateRequest;
+use App\Http\Requests\Post\PostEditRequest;
+use App\Http\Requests\Post\PostUpdateRequest;
 use App\Http\Controllers\Controller;
 use App\Models\Post;
 
@@ -38,10 +40,6 @@ class PostController extends Controller
      */
     public function store(PostCreateRequest $request, Post $post)
     {
-        //
-        logger()->debug($request->getUserId());
-        logger()->debug($request->getPayload());
-
         $post->fill([
             'user_id' => $request->getUserId(),
             'payload' => $request->getPayload(),
@@ -65,9 +63,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(int $id)
+    public function edit(PostEditRequest $request, Post $model)
     {
-        //
+        return Inertia::render('Post/Edit', ['post' => $model->find($request->getId())]);
     }
 
     /**
@@ -77,9 +75,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, int $id)
+    public function update(PostUpdateRequest $request, Post $post)
     {
-        //
+        $post->find($request->getId())->fill(['payload' => $request->getPayload()])->save();
     }
 
     /**

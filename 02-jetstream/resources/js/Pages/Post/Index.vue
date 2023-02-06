@@ -64,7 +64,7 @@ function destroy(id) {
                                         </td>
 
                                         <td class="px-6 py-4">
-                                            <Link :href="route('post.edit', post.id)">
+                                            <Link :href="route('post.edit', {id: post.id})">
                                             <PrimaryButton>Edit</PrimaryButton>
                                             </Link>
                                         </td>
