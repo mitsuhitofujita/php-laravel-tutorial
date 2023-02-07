@@ -10,3 +10,16 @@ npm run build
 php artisan migrate
 php artisan serve
 ```
+
+```
+php artisan make:migration create_posts_table
+php artisan make:model Post
+```
+
+```
+$params = ['payload' => 'new-post'];
+$request = \App\Http\Requests\Post\PostCreateRequest::create('/post/store', 'PUT', $params);
+$controller = app()->make(\App\Http\Controllers\Post\PostController::class);
+app()->call([$controller, 'store'], ['request' => $request]);
+```
+
