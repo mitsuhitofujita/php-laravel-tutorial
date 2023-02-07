@@ -14,7 +14,7 @@ const props = defineProps({
 const form = useForm({});
 function destroy(id) {
     if (confirm("Are you sure you want to Delete")) {
-        form.delete(route('post.destroy', id));
+        form.delete(route('post.destroy', {id: id}));
     }
 }
 </script>

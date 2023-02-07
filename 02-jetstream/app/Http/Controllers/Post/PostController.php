@@ -7,6 +7,7 @@ use Inertia\Inertia;
 use App\Http\Requests\Post\PostCreateRequest;
 use App\Http\Requests\Post\PostEditRequest;
 use App\Http\Requests\Post\PostUpdateRequest;
+use App\Http\Requests\Post\PostDestroyRequest;
 use App\Http\Controllers\Controller;
 use App\Models\Post;
 
@@ -63,9 +64,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(PostEditRequest $request, Post $model)
+    public function edit(PostEditRequest $request, Post $post)
     {
-        return Inertia::render('Post/Edit', ['post' => $model->find($request->getId())]);
+        return Inertia::render('Post/Edit', ['post' => $post->find($request->getId())]);
     }
 
     /**
@@ -86,8 +87,8 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(int $id)
+    public function destroy(PostDestroyRequest $request, Post $post)
     {
-        //
+        $post->destroy($request->getId());
     }
 }
