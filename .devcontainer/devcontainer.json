@@ -10,7 +10,8 @@
 		"APP_ENV": "local",
 		"APP_KEY": "base64:GsSOvZ2uoodgjc1l4XfOWdWs+pMRw34I8mfkCZFEwps=",
 		"APP_DEBUG": "true",
-		"APP_URL": "http://localhost"
+		"APP_URL": "http://localhost",
+		"DB_CONNECTION": "tutorial"
 	},
 	"workspaceFolder": "/workspace",
 	"customizations": {
