@@ -10,6 +10,7 @@ use App\Http\Requests\Post\PostUpdateRequest;
 use App\Http\Requests\Post\PostDestroyRequest;
 use App\Http\Controllers\Controller;
 use App\Models\Post;
+use Illuminate\Http\Response;
 
 class PostController extends Controller
 {
@@ -45,6 +46,7 @@ class PostController extends Controller
             'user_id' => $request->getUserId(),
             'payload' => $request->getPayload(),
         ])->save();
+        return response('', Response::HTTP_CREATED);
     }
 
     /**
@@ -79,6 +81,7 @@ class PostController extends Controller
     public function update(PostUpdateRequest $request, Post $post)
     {
         $post->find($request->getId())->fill(['payload' => $request->getPayload()])->save();
+        return response('', Response::HTTP_NO_CONTENT);
     }
 
     /**

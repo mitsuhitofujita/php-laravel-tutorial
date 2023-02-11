@@ -23,3 +23,7 @@ $controller = app()->make(\App\Http\Controllers\Post\PostController::class);
 app()->call([$controller, 'store'], ['request' => $request]);
 ```
 
+```
+APPENV=testing DB_CONNECTION=tutorial_testing php artisan migrate
+APP_ENV=testing DB_CONNECTION=tutorial_testing php artisan test 
+```

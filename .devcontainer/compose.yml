@@ -3,18 +3,25 @@ version: '3'
 services:
   php-fpm:
     build: ./docker/php-fpm
+    environment:
+      DB_PASSWORD: tutorial
+      DB_PASSWORD_TESTING: tutorial
+      DB_HOST: mariadb
+      DB_HOST_TESTING: mariadb
     tty: true
     volumes:
       - ../:/workspace:cached
       - php-socket:/var/run/php
   mariadb:
     build: ./docker/mariadb
-    restart: always
     environment:
       MARIADB_ROOT_PASSWORD: tutorial
       MARIADB_DATABASE: tutorial
       MARIADB_USER: tutorial
       MARIADB_PASSWORD: tutorial
       MARIADB_HOST: mariadb
+    restart: always
+    volumes:
+      - ./docker/mariadb/initdb.d:/docker-entrypoint-initdb.d
 volumes:
   php-socket:
