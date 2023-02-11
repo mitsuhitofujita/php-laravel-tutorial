@@ -57,11 +57,11 @@ return [
 
         'tutorial_testing' => [
             'driver' => 'mysql',
-            'host' => env('TESTING_DB_HOST', 'mariadb'),
-            'port' => env('TESTING_DB_PORT', '3306'),
-            'database' => env('TESTING_DB_DATABASE', 'tutorial_testing'),
-            'username' => env('TESTING_DB_USERNAME', 'tutorial'),
-            'password' => env('TESTING_DB_PASSWORD', ''),
+            'host' => env('DB_HOST_TESTING', ''),
+            'port' => env('DB_PORT_TESTING', '3306'),
+            'database' => env('DB_DATABASE_TESTING', 'tutorial_testing'),
+            'username' => env('DB_USERNAME_TESTING', 'tutorial'),
+            'password' => env('DB_PASSWORD_TESTING', ''),
             'unix_socket' => '',
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
