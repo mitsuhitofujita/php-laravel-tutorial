@@ -48,6 +48,9 @@
         ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
+        ],
+        "test": [
+            "APP_ENV=testing DB_CONNECTION=tutorial_testing php artisan test"
         ]
     },
     "extra": {
