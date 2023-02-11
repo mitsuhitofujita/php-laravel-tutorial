@@ -1,18 +1,3 @@
 {
-    "sqltools.connections": [
-        {
-            "mysqlOptions": {
-                "authProtocol": "default"
-            },
-            "previewLimit": 50,
-            "server": "mariadb",
-            "port": 3306,
-            "driver": "MariaDB",
-            "name": "mariadb",
-            "group": "tutorial",
-            "database": "tutorial",
-            "username": "tutorial",
-            "password": "tutorial"
-        }
-    ]
+	"terminal.integrated.defaultProfile.linux": "bash"
 }

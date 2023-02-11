@@ -4,11 +4,10 @@ services:
   php-fpm:
     build: ./docker/php-fpm
     environment:
-      DB_CONNECTION: tutorial
       DB_PASSWORD: tutorial
-      DB_DATABASE: tutorial
-      DB_DATABASE_TESTING: tutorial
+      DB_PASSWORD_TESTING: tutorial
       DB_HOST: mariadb
+      DB_HOST_TESTING: mariadb
     tty: true
     volumes:
       - ../:/workspace:cached
