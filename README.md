@@ -18,3 +18,8 @@ composer require laravel/breeze --dev
 php artisan breeze:install vue
 php artisan serve
 ```
+
+```
+npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-vue
+npm install --save-dev prettier eslint-config-prettier
+```
