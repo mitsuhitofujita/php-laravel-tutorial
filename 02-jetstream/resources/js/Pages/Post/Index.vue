@@ -4,17 +4,11 @@ import PrimaryButton from '@/Components/PrimaryButton.vue';
 import DangerButton from '@/Components/DangerButton.vue';
 import { Link } from '@inertiajs/vue3';
 import { useForm } from "@inertiajs/vue3";
-const props = defineProps({
-    posts: {
-        type: Array,
-        default: () => ([]),
-    },
-});
 
 const form = useForm({});
 function destroy(id) {
     if (confirm("Are you sure you want to Delete")) {
-        form.delete(route('post.destroy', {id: id}));
+        form.delete(route('post.destroy', {id: id})); /* eslint no-undef: "off", curly: "error" */
     }
 }
 </script>
@@ -49,13 +43,16 @@ function destroy(id) {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr v-for="post in posts" :key="post.id"
+                                    <tr
+v-for="post in posts" :key="post.id"
                                         class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                                        <th scope="row"
+                                        <th
+scope="row"
                                             class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
                                             {{ post.id }}
                                         </th>
-                                        <th scope="row"
+                                        <th
+scope="row"
                                             class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
                                             {{ post.user_id }}
                                         </th>
