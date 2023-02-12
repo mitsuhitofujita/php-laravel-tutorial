@@ -4,7 +4,6 @@ namespace App\Http\Requests\Post;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-
 class PostUpdateRequest extends FormRequest
 {
     /**
@@ -51,5 +50,4 @@ class PostUpdateRequest extends FormRequest
     {
         return $this->input('payload');
     }
-
 }
