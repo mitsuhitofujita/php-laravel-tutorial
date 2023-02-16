@@ -1,6 +1,5 @@
 <script setup>
-import { ref } from 'vue';
-import { Link, router, useForm } from '@inertiajs/vue3';
+import { useForm } from '@inertiajs/vue3';
 import ActionMessage from '@/Components/ActionMessage.vue';
 import FormSection from '@/Components/FormSection.vue';
 import InputError from '@/Components/InputError.vue';
@@ -17,10 +16,8 @@ const form = useForm({
     payload: props.post.payload,
 });
 
-const verificationLinkSent = ref(null);
-
 const createPost = () => {
-    form.post(route('post.store'));
+    form.post(route('post.store')); /* eslint no-undef: "off", curly: "error" */
 };
 </script>
 

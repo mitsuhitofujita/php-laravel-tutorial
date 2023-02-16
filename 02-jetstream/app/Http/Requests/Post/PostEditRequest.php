@@ -4,7 +4,6 @@ namespace App\Http\Requests\Post;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-
 class PostEditRequest extends FormRequest
 {
     /**

@@ -1,0 +1,11 @@
+resources/js/Pages/Profile
+resources/js/Pages/Auth
+resources/js/Pages/API
+resources/js/Pages/Dashboard.vue
+resources/js/Pages/Hello.vue
+resources/js/Pages/PrivacyPolicy.vue
+resources/js/Pages/TermsOfService.vue
+resources/js/Pages/Welcome.vue
+
+resources/js/Layouts/AppLayout.vue
+resources/js/Components/ConfirmsPassword.vue
